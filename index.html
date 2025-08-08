@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusinessPro - Professional Business Solutions</title>
+    <meta name="description" content="Transform your business with innovative strategies and cutting-edge technology. Professional solutions for sustainable growth.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-flex">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <a href="/">BusinessPro</a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-menu">
+                    <div class="nav-list">
+                        <a href="#home" class="nav-link">Home</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#services" class="nav-link">Services</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="nav-mobile-menu">
+                    <button id="mobile-menu-button" class="nav-mobile-button" aria-label="Toggle navigation menu">
+                        <svg id="menu-icon" class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="close-icon" class="close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Panel -->
+            <div id="mobile-menu" class="nav-mobile-panel hidden">
+                <a href="#home" class="nav-mobile-link">Home</a>
+                <a href="#about" class="nav-mobile-link">About</a>
+                <a href="#services" class="nav-mobile-link">Services</a>
+                <a href="#contact" class="nav-mobile-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="responsive-container">
+        <!-- Hero Section -->
+        <section class="hero-container" id="home">
+            <div class="hero-grid">
+                <!-- Text Content - Left Column -->
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Transform Your Business with 
+                        <span class="gradient-text">Professional Solutions</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        We help businesses achieve their goals through innovative strategies, 
+                        cutting-edge technology, and personalized service. Partner with us to 
+                        unlock your company's full potential and drive sustainable growth.
+                    </p>
+
+                    <div class="cta-buttons">
+                        <a href="#contact" class="hero-cta">
+                            Get Started Today
+                            <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                        
+                        <a href="#about" class="hero-secondary-cta">
+                            <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H15M6 20l4-16h4l4 16H6z"></path>
+                            </svg>
+                            Learn More
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="trust-section">
+                        <p class="trust-text">Trusted by 500+ companies worldwide</p>
+                        <div class="trust-logos">
+                            <div class="trust-logo">Microsoft</div>
+                            <div class="trust-logo">Google</div>
+                            <div class="trust-logo">Amazon</div>
+                            <div class="trust-logo">Apple</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image - Right Column -->
+                <div class="hero-image-container">
+                    <img 
+                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                        alt="Modern business workspace with professional setup showcasing productivity and innovation"
+                        class="hero-image"
+                        loading="eager"
+                    >
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', function() {
+            const isMenuOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = document.querySelectorAll('.nav-mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
